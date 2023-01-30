@@ -1,0 +1,94 @@
+1
+1 2
+1 2 3
+1 2 3 4 
+n = 4
+for i in range(n):
+    p=1
+    for j in range(i+1):
+        print(p, end=" ")
+        p += 1
+    print()
+-----------------------------------------------------
+      1
+    1   1
+   1  1   1
+ 1   1   1  1
+
+n = int(input("enter the number n :"))
+for i in  range(n):
+    print("  "*(n-i-1), end="")
+    for j in range(i+1):
+        print(1, "  ", end="")
+    print()
+
+-----------------------------------------------------
+AMSTRONG
+
+num = int(input("Enter a number: "))
+sum = 0
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+----------------------------------------------------------
+SORT
+
+n = [1, 3, 4, 2]
+n.sort()
+print(n)
+decinum = [2.01, 2.00, 3.67, 3.28, 1.68]
+decinum.sort()
+print(decinum)
+------------------------------------------------------------
+ADDITION
+
+N1 = int (input ("enter the first number"))
+N2 = int (input("enter the second  number"))
+SUM =  N1+ N2
+print(SUM)
+----------------------------------------------------------
+PRIME
+
+n = int(input("enter the number"))
+flag = 0
+if n==2:
+    print(n, "is a prime number")
+elif n <= 1:
+    print(n, "is not a prime  number")
+else:
+    for i in range(2, (n//2)+1):
+        if n % i ==0:
+            flag = 1
+            break
+if flag == 0:
+    print(n, "is a prime number")
+else:
+    print(n, "is not  a prime number")
+--------------------------------------------------------------
+LEAP YEAR
+
+n = int(input("enetr a number"))
+if (n%4)==0:
+    print(n, "is a leap year ")
+else:
+    print (n, "is not a leap year")
+----------------------------------------------------------------
+GREATEST
+
+n1 = int(input("enter the number"))
+n2 = int(input("enter the number"))
+n3= int(input("enter the number"))
+if ((n1>n2) & (n1>n3)):
+    print(n1, "is the greatest number")
+elif ((n2>n1) & (n2>n3)):
+    print(n2, "is the greatest number")
+else:
+    print(n3, "is the greatest number")
+
+------------------------------------------------------------------

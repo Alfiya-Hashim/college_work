@@ -1,0 +1,73 @@
+reverse
+
+num = 1234
+reversed_num = 0
+
+while num != 0:
+    digit = num % 10
+    reversed_num = reversed_num * 10 + digit
+    num //= 10
+
+print("Reversed Number: " + str(reversed_num))
+------------------------------------------------------------------------
+swapping
+
+x = 5
+y = 10
+
+# To take inputs from the user
+#x = input('Enter value of x: ')
+#y = input('Enter value of y: ')
+
+# create a temporary variable and swap the values
+temp = x
+x = y
+y = temp
+
+print('The value of x after swapping: {}'.format(x))
+print('The value of y after swapping: {}'.format(y))
+-----------------------------------------------------------------------------
+palindrom
+
+def solve(num):
+   a = 0
+   c = num
+   while num > 0:
+      r = num % 10
+      num = num // 10
+      a = (10 * a) + r
+   if a == c:
+      return True
+   else:
+      return False
+
+num = 25352
+print(solve(num))
+----------------------------------------------------------
+binary to decimal
+
+b_num = list(input("Input a binary number: "))
+value = 0
+
+for i in range(len(b_num)):
+	digit = b_num.pop()
+	if digit == '1':
+		value = value + pow(2, i)
+print("The decimal value of the number is", value)
+----------------------------------------------------------------------
+sum of n num
+
+# Sum of natural numbers up to num
+
+num = 16
+
+if num < 0:
+   print("Enter a positive number")
+else:
+   sum = 0
+   # use while loop to iterate until zero
+   while(num > 0):
+       sum += num
+       num -= 1
+   print("The sum is", sum)
+--------------------------------------------------------

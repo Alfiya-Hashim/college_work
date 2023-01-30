@@ -1,0 +1,10 @@
+DIMENTION
+
+
+import numpy as np
+rows = int(input("enter number of rows: "))
+cols = int(input("enter number of columns:"))
+print("enter the entries in a (single line seperate by space): ")
+entries = list(map(int, input().split()))
+A = np.array(entries).reshape(rows, cols)
+print("dimensions=", np.shape(A))

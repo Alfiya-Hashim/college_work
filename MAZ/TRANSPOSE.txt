@@ -1,0 +1,21 @@
+TRANSPOSE
+
+def transpose(A,B):
+    for i in range(n):
+        for j in range(m):
+            B[i][j] = A[j][i]
+import numpy as np
+n = int(input("enter number of rows: "))
+m = int(input("enter number of columns: "))
+print("enter the entries in a (single line seperated by space):")
+entries = list(map(int, input().split()))
+A = np.array(entries).reshape(n, m)
+print("A:",A)
+
+B = [[0 for x in range(m)]for y in range(n)]
+transpose(A,B)
+print("Result matrix is B: ")
+for i in range(n):
+    for j in range(m):
+        print( B[i][j], "", end="")
+    print()

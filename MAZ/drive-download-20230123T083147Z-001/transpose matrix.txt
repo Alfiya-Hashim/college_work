@@ -1,0 +1,15 @@
+import numpy as np
+n = int(input("Enter the order of matrix :"))
+matrix=[]
+print("Enter the elements of matrix :")
+for i in range (n) :
+    for j in range (n) :
+       ele = int(input())
+       matrix.append(ele)
+print("The matrix is") 
+matrix = np.array(matrix)
+matrix= matrix.reshape(n,n)
+print(matrix) 
+print("The transpose matrix is")
+trans_matrix = matrix.transpose()
+print(trans_matrix)  

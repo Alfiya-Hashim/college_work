@@ -1,0 +1,8 @@
+import numpy as np
+from numpy.linalg import norm
+A = np.array([2,1,2,3,2,9])
+B = np.array([3,4,2,4,5,5]) 
+print (f"A:{A}")
+print (f"B:{B}")
+Cosine_similarity = np.dot(A,B) /(norm(A)*norm(B)) 
+print(f"Cosine_similarity:{Cosine_similarity}")        

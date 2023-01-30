@@ -1,0 +1,15 @@
+import numpy as np
+n = int(input("Enter the order of matrix :"))
+matrix=[]
+print("Enter the elements of matrix :")
+for i in range (n) :
+    for j in range (n) :
+       ele = int(input())
+       matrix.append(ele)
+print("The matrix is") 
+matrix = np.array(matrix)
+matrix= matrix.reshape(n,n)
+inverse_matrix = np.linalg.inv(matrix)  
+print(matrix) 
+print("The inverse matrix is")
+print(inverse_matrix)

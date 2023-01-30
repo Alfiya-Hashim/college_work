@@ -1,0 +1,25 @@
+DIAGONAL
+
+
+import numpy as np
+row = int(input("enter number of rows:"))
+col = int(input("enter number of cols:"))
+print("enter the entries for matrix:")
+num =  list(map(int, input().split()))
+matrix = np.array(num).reshape(row, col)
+print(matrix)
+geeks = matrix.diagonal()
+print("diagonal vector:", geeks)
+arr = []
+def dia(matrix, row, col):
+    for i in range(0, row):
+        for j in range(0, col):
+            if(i==j):
+                m1=matrix[i][j]
+                arr.append(m1)
+            else:
+                m1=0
+                arr.append(m1)
+            return arr
+res = dia(matrix, row,col)
+print(np.array(res).reshape(row, col))

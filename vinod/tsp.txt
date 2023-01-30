@@ -1,0 +1,33 @@
+from itertools import permutations
+from sys import maxsize
+def tsp(graph, s):
+    vertex = []
+    path = []
+    V = len(graph)
+    for i in range(V):
+        if i != s:
+             vertex.append(i)
+
+    min_path_weight = maxsize
+    next_permutation = permutations(vertex)
+
+    for permutation in next_permutation:
+        current_path_weight = 0
+        k = s
+        for element in permutation:
+             current_path_weight += graph[k][element]
+             k = element
+        current_path_weight += graph[k][s]
+
+        if min_path_weight>current_path_weight:
+             min_path_weight = current_path_weight
+             path.append(permutation)
+    return min_path_weight, path
+
+graph = [[0, 0, 0, 0, 0], [0, 0, 20, 25, 30], [0, 20, 0, 35, 35], [0, 25, 35, 0, 40], [0, 30, 35, 40, 0]]
+s = 2
+Output = tsp(graph, s)
+
+print(f'Minimum cost for travelling : {Output[0]}')
+for i in Output[1]:
+    print(f'path =>{s} {i} {s}')

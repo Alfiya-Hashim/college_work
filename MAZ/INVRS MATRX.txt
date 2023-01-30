@@ -1,0 +1,10 @@
+INVRSE MATRX
+
+import numpy as np
+n = int(input("enter number of rows:"))
+m = int(input("enter number of columns:"))
+print("enter the entries in a (single line seperate by space):")
+entries = list(map(int, input().split()))
+A = np.array(entries).reshape(n, m)
+print("A:", A)
+print(np.linalg.inv(A))

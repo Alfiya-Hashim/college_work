@@ -1,0 +1,15 @@
+import numpy as np
+n = int(input("Enter the order of matrix :"))
+matrix=[]
+print("Enter the elements of matrix :")
+for i in range (n) :
+    for j in range (n) :
+       ele = int(input())
+       matrix.append(ele)
+print("The matrix is") 
+matrix = np.array(matrix)
+matrix= matrix.reshape(n,n)
+determinant_matrix = np.linalg.det(matrix)  
+print(matrix) 
+print("The determinant of matrix is")
+print(determinant_matrix)

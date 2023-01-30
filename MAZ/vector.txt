@@ -1,0 +1,2 @@
+vector = input("enter vector we have: ")
+print("vector=: ", vector)

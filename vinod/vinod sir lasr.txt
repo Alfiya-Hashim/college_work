@@ -1,0 +1,167 @@
+last 9/1/23
+********************************************************
+binary search
+
+def binary_search(arr, low, high, x):
+    if high >= low:
+
+        mid = (high + low) // 2
+
+
+        if arr[mid] == x:
+            return mid
+
+
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+
+
+        else:
+            return binary_search(arr, mid + 1, high, x)
+
+    else:
+
+        return -1
+arr = [2, 3, 4, 10, 40, 75, 66, 90]
+x = 90
+result = binary_search(arr, 0, len(arr) - 1, x)
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
+```````````````````````````````````````````````````````````````````````````````
+tsp
+
+from itertools import permutations
+from sys import maxsize
+def tsp(graph, s):
+    vertex = []
+    path = []
+    V = len(graph)
+    for i in range(V):
+        if i != s:
+             vertex.append(i)
+
+    min_path_weight = maxsize
+    next_permutation = permutations(vertex)
+
+    for permutation in next_permutation:
+        current_path_weight = 0
+        k = s
+        for element in permutation:
+             current_path_weight += graph[k][element]
+             k = element
+        current_path_weight += graph[k][s]
+
+        if min_path_weight>current_path_weight:
+             min_path_weight = current_path_weight
+             path.append(permutation)
+    return min_path_weight, path
+
+graph = [[0, 0, 0, 0, 0], [0, 0, 20, 25, 30], [0, 20, 0, 35, 35], [0, 25, 35, 0, 40], [0, 30, 35, 40, 0]]
+s = 2
+Output = tsp(graph, s)
+
+print(f'Minimum cost for travelling : {Output[0]}')
+for i in Output[1]:
+    print(f'path =>{s} {i} {s}')
+`````````````````````````````````````````````````````````````````````````````````````````
+n queen
+
+n = int(
+    input("Number of queens :"))
+assert n >= 4, "it only works in minimum 16 cells"
+board = [[0 for i in range(n)] for i in range(n)]
+
+
+def column_check(board, row, column):
+
+    for i in range(row, -1, -1):
+        if board[i][column] == 1:
+            return False
+    return True
+
+
+def diagonal_check(board, row, column):
+
+    for i, j in zip(range(row, -1, -1), range(column, -1, -1)):
+        if board[i][j] == 1:
+            return False
+    for i, j in zip(range(row, -1, -1), range(column, n)):
+        if board[i][j] == 1:
+            return False
+    return True
+
+
+def N_QUEEN(board, row):
+
+    if row == n:
+        return True
+    for i in range(n):
+        if column_check(board, row, i) == True and diagonal_check(board, row, i) == True:
+            board[row][i] = 1
+            if N_QUEEN(board, row + 1):
+                return True
+            board[row][i] = 0
+    return False
+
+
+N_QUEEN(board, 0)
+
+for row in board:
+    print(row)
+``````````````````````````````````````````````````````````````````````````````````````````
+breadtth frst srch
+
+graph = {
+    '5' : ['3','7'],
+    '3' : ['2', '4'],
+    '7' : ['8'],
+    '2' : [],
+    '4' : ['8'],
+    '8' : []
+}
+
+visited = []
+queue = []
+
+def bfs(visited, graph, node):
+    visited.append(node)
+    queue.append(node)
+
+    while queue:
+        m = queue.pop(0)
+        print (m, end = " ")
+
+        for neighbour in graph[m]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
+
+
+print("Following is the Breadth-First Search")
+bfs(visited, graph, '5')
+``````````````````````````````````````````````````````````````````````````````
+depth frst srch
+
+graph = {
+    '5' : ['3','7'],
+    '3' : ['2', '4'],
+    '7' : ['8'],
+    '2' : [],
+    '4' : ['8'],
+    '8' : []
+}
+
+visited = []
+
+
+def dfs(visited, graph, node):
+    if node not in visited:
+        print(node)
+        visited.append(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+
+print("Following is the Depth-First Search")
+dfs(visited, graph, '5')

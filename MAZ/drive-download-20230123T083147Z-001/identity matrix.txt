@@ -1,0 +1,16 @@
+import numpy as np
+n = int(input("Enter the order of matrix :"))
+identity_matrix=[]
+for i in range (n) :
+    for j in range (n) :
+        if i==j:
+            identity_matrix.append(1)
+        else:
+            print("Enter the elements of matrix :")
+            ele = int(input())
+            identity_matrix.append(ele)
+print("The identity matrix is") 
+identity_matrix = np.array(identity_matrix)
+identity_matrix= identity_matrix.reshape(n,n)
+print(identity_matrix)                
+       

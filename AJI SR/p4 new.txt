@@ -1,0 +1,8 @@
+import pandas as pd
+df = pd.read_csv("day.csv")
+print(df)
+df_min_max_scaled = df.copy()
+for coloumn in df_min_max_scaled.columns:
+    df_min_max_scaled[coloumn] = (df_min_max_scaled[coloumn] -
+                                  df_min_max_scaled[coloumn] .min())/(df_min_max_scaled[coloumn] .max() - df_min_max_scaled[coloumn] .min())
+    print(df_min_max_scaled)
