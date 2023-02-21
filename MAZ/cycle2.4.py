@@ -1,0 +1,1 @@
+#uniform coast search

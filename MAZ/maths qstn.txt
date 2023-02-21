@@ -1,0 +1,42 @@
+set 1
+----------------
+1.Define a vector
+2.add 2 vectors using numpy
+3.subtract 2 vectors using numpy
+4.multiply 2 vectors using numpy
+5.divide 2 vectors using numpy
+6.find dot product of two vectors
+7.perform vector scalar multiplication
+8.L1 norms
+
+set2
+------------------------
+1.define a matrix
+2.add 2 matrix:
+3.substract two matrix
+4.find hadamard product of two matrix:
+5.divide two matrix
+6.find the product of two matrix
+7.perform vector matrix multiplication:
+8.perform scalar matrix multiplication
+9.Define a 3*3 square matrix extract the main diagonal as vector
+10.create an identity matrix of order 4:
+11.find transpose of a matrix:
+12.inverse of a matrix
+13.print determinant of matrix
+
+set3
+------------------------------
+1.create an orthogonal matrix:
+2.print rank of matrix
+3.sparsity of matrix:
+4.print eigen values and eigen vectors of a matrix:
+5.calculate eigen values and eigen vectors of a matrix and reconstruct the matrix:
+6.define 5*2 matrix dataset ,split it into x and y components and print data set as scatterplot
+
+
+
+
+
+
+

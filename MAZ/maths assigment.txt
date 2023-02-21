@@ -299,7 +299,35 @@ print("The determinant of matrix is")
 print(determinant_matrix)
 
 set 3:
+
+
 1)create an orthogonal matrix:
+
+def is_orthogonal(Q, m, n):
+    if m != n:
+        return False
+    else:
+        for i in range(0, n):
+            for j in range(0, n):
+                sum = 0
+                for k in range(0, n):
+                    sum = sum + round(Q[i][k] * Q[j][k])
+                if i != j and sum != 0:
+                    return False
+                if i == j and sum != 1:
+                    return False
+                else:
+                    return True
+
+
+Q = [[0.68567, 0.12975, -0.71626],
+     [0.14807, 0.93855, 0.31176],
+     [0.71269, -0.31982, 0.62433]]
+if is_orthogonal(Q, 3, 3):
+    print("The given matrix is orthogonal")
+else:
+    print("The given matrix is not orthogonal")
+
 2)print rank of matrix:
 
 import numpy as np

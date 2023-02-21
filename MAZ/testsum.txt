@@ -1,0 +1,19 @@
+from google.colab import drive
+drive.mount('/content/drive')
+
+cd drive/
+
+cd MyDrive/
+
+cd PreSumm/
+
+cd src/
+
+!pip install pytorch-transformers
+
+!pip install pyrouge
+
+!pip install tensorboardX
+
+
+!python train.py -task ext -mode train -bert_data_path /content/drive/MyDrive/PreSumm/bert_data/cnndm -ext_dropout 0.1 -model_path /content/drive/MyDrive/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 100 -batch_size 3000 -train_steps 500 -accum_count 2 -log_file /content/drive/MyDrive/PreSumm/logs/cnndm.log -use_interval true -warmup_steps 100 -max_pos 512
