@@ -19,9 +19,17 @@ def binary_search(arr, low, high, x):
     else:
 
         return -1
-arr = [2, 3, 4, 10, 40]
-x = 55
-result = binary_search(arr, 0, len(arr) - 1, x)
+
+arr = []
+n = int(input("enter number of elements:"))
+print("the element of array is:")
+for i in range(0, n):
+    ele = int(input())
+    arr.append(ele)
+print(arr)
+
+key = int(input("eneter the key value:"))
+result = binary_search(arr, 0, len(arr) - 1, key)
 if result != -1:
     print("Element is present at index", str(result))
 else:

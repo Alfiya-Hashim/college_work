@@ -1,4 +1,10 @@
 #implementation of insertion sort
+arr = []
+n = int(input("enter number of elements:"))
+print("the element of array is:")
+for i in range(0, n):
+    ele = int(input())
+    arr.append(ele)
 
 def insertionSort(arr):
     if (n := len(arr)) <= 1:
@@ -12,9 +18,8 @@ def insertionSort(arr):
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
-
-
-
-arr = [12, 11, 13, 5, 6]
 insertionSort(arr)
 print(arr)
+
+
+

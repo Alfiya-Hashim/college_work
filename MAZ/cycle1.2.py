@@ -37,22 +37,21 @@ def merge(arr, l, m, r):
         j += 1
         k += 1
 
-
-
-
 def mergeSort(arr, l, r):
     if l < r:
 
         m = l + (r - l) // 2
-
-
         mergeSort(arr, l, m)
         mergeSort(arr, m + 1, r)
         merge(arr, l, m, r)
 
+arr = []
+n = int(input("enter number of elements:"))
+print("the element of array is:")
+for i in range(0, n):
+    ele = int(input())
+    arr.append(ele)
 
-arr = [12, 11, 13, 5, 6, 7]
-n = len(arr)
 print("Given array is")
 for i in range(n):
     print("%d" % arr[i], end=" ")

@@ -8,14 +8,14 @@ graph = {
   '8' : []
 }
 
-visited = [] # List for visited nodes.
-queue = []     #Initialize a queue
+visited = []
+queue = []
 
-def bfs(visited, graph, node): #function for BFS
+def bfs(visited, graph, node):
   visited.append(node)
   queue.append(node)
 
-  while queue:          # Creating loop to visit each node
+  while queue:
     m = queue.pop(0)
     print (m, end = " ")
 
